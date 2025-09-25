@@ -6,12 +6,10 @@ int main()
 
     char date1[9];
     char date2[9];
-    //prenier date
     printf("Entrez la premiere date (mm/jj/aa) :");
 
 
     scanf("%8s", date1);
-    //deuxiem date
     printf("Entrez la deuxieme date (mm/jj/aa) :");
 
     scanf("%8s", date2);
