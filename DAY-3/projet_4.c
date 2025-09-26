@@ -1,23 +1,17 @@
 #include <stdio.h>
-#define N 10
 
 int main()
-
 {
+    int a[10], i;
+    int n = (int)(sizeof(a) / sizeof(a[0]));
 
-    int a[N], i;
-    printf("Entrez %d nombress : ", N);
-
-    for (i = 0; i<N;i++);
+    printf("Entrez %d nombres : ", n);
+    for (i = 0; i < n; i++)
         scanf("%d", &a[i]);
 
-    printf("Dans lordre invers : ");
-
-    for (i = N - 1; i >= 0; i--)
-        printf(" %d", a[i]);
-
-    printf("\n");
+    printf("Dans l'ordre inverse : ");
+    for (i = n - 1; i >= 0; i--)
+        printf("%d ", a[i]);
 
     return 0;
-
 }
