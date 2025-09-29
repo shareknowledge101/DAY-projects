@@ -19,9 +19,10 @@ int main() {
 
         switch (choix) {
             case 1:
+
                 ajouter();
                 printf("\nAppuyez sur Entree pour continuer...");
-                getchar(); getchar();
+                getchar();
                 system("clear");
                 break;
             case 2:
@@ -52,7 +53,7 @@ int main() {
 
                 break;
             case 6:
-                trier();
+                trier();//add paramrtters
                 printf("\nAppuyez sur Entree pour continuer...");
                 getchar(); getchar();
                 system("clear");

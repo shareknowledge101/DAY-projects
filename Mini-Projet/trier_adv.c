@@ -19,6 +19,8 @@ void trier() {
         return;
     }
 
+
+    
     int choix;
     saisirChoixTri(&choix);
 

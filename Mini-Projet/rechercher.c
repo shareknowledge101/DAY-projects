@@ -3,6 +3,26 @@
 #include "headers.h"
 #include "utilisable_inputs.h"
 
+// Search by ID - returns index if found, -1 if not found
+int rechercheByID(int id) {
+    for (int i = 0; i < AvionCalc; i++) {
+        if (flotte[i].id == id) {
+            return i; // Return index instead of just 1
+        }
+    }
+    return -1; // Not found
+}
+
+// Search by Model - returns index if found, -1 if not found
+int rechercheByModel(char model[]) {
+    for (int i = 0; i < AvionCalc; i++) {
+        if (strcmp(flotte[i].modele, model) == 0) {
+            return i; // Return index instead of just 1
+        }
+    }
+    return -1; // Not found
+}
+
 void rechercher() {
     if (AvionCalc == 0) {
         printf("[!] Aucune entree d'avion disponible pour recherche.\n");
@@ -12,52 +32,39 @@ void rechercher() {
     int choix;
     saisirChoixRechercher(&choix);
 
-    int found = 0;
+    int trouve_indic = -1;
     
     if (choix == 1) {
-
-        
         int id;
         saisirID(&id);
+        trouve_indic = rechercheByID(id);
         
-        for (int i = 0; i < AvionCalc; i++) {
-            if (flotte[i].id == id) {
-                found = 1;
-                printf("###### Avion trouve ######\n");
-                printf(">> ID Avion: [%03d]\n", flotte[i].id);
-                printf(">> Modele: %s\n", flotte[i].modele);
-                printf(">> Capacite: %d passagers\n", flotte[i].capacity);
-                printf(">> Statut: %s\n", flotte[i].statut);
-                printf(">> Date d'entree: %s\n", flotte[i].Date_Entree);
-                printf("------------------------\n");
-                break;
-            }
-        }
-        
-        if (!found) {
+        if (trouve_indic != -1) {
+            printf("###### Avion trouve ######\n");
+            printf(">> ID Avion: [%03d]\n", flotte[trouve_indic].id);
+            printf(">> Modele: %s\n", flotte[trouve_indic].modele);
+            printf(">> Capacite: %d passagers\n", flotte[trouve_indic].capacity);
+            printf(">> Statut: %s\n", flotte[trouve_indic].statut);
+            printf(">> Date d'entree: %s\n", flotte[trouve_indic].Date_Entree);
+            printf("------------------------\n");
+        } else {
             printf("[!] Aucun avion trouve avec l'ID [%03d].\n", id);
         }
     }
     else if (choix == 2) {
-
         char modele[30];
         saisirModele(modele);
+        trouve_indic = rechercheByModel(modele);
         
-        for (int i = 0; i < AvionCalc; i++) {
-            if (strcmp(flotte[i].modele, modele) == 0) {
-                found = 1;
-                printf("###### Avion trouve ######\n");
-                printf(">> ID Avion: [%03d]\n", flotte[i].id);
-                printf(">> Modele: %s\n", flotte[i].modele);
-                printf(">> Capacite: %d passagers\n", flotte[i].capacity);
-                printf(">> Statut: %s\n", flotte[i].statut);
-                printf(">> Date d'entree: %s\n", flotte[i].Date_Entree);
-                printf("------------------------\n");
-                break;
-            }
-        }
-        
-        if (!found) {
+        if (trouve_indic != -1) {
+            printf("###### Avion trouve ######\n");
+            printf(">> ID Avion: [%03d]\n", flotte[trouve_indic].id);
+            printf(">> Modele: %s\n", flotte[trouve_indic].modele);
+            printf(">> Capacite: %d passagers\n", flotte[trouve_indic].capacity);
+            printf(">> Statut: %s\n", flotte[trouve_indic].statut);
+            printf(">> Date d'entree: %s\n", flotte[trouve_indic].Date_Entree);
+            printf("------------------------\n");
+        } else {
             printf("[!] Aucun avion trouve avec le modele [%s].\n", modele);
         }
     }

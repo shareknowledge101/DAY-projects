@@ -9,7 +9,7 @@ void afficher() {
 
     printf("(---###### Liste des avions ######---)\n");
     for (int i = 0; i < AvionCalc; i++) {
-        printf("ID Avion: %d\n", flotte[i].id);
+        printf("ID Avion: %03d\n", flotte[i].id);
         printf("Modele: %s\n", flotte[i].modele);
         printf("Capacite: %d passagers\n", flotte[i].capacity);
         printf("Statut: %s\n", flotte[i].statut);
@@ -17,3 +17,4 @@ void afficher() {
         printf("---------------------------\n");
     }
 }
+
