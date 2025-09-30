@@ -25,7 +25,7 @@ void trier() {
     saisirChoixTri(&choix);
 
     for (int i = 0; i < AvionCalc - 1; i++) {
-        for (int j = 0; j < AvionCalc - i - 1; j++) {
+        for (int j = 0; j < AvionCalc - 1; j++) {
             int echang = 0;
 
             if (choix == 1 && flotte[j].id > flotte[j + 1].id) {

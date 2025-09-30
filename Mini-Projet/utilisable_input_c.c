@@ -8,7 +8,7 @@ void saisirModele(char *modele) {
 
 void saisirCapacite(int *capacite) {
     printf("Entrez la capacite (nombre de passagers): ");
-    scanf("%d", capacite); // Fixed: changed "sanfc" to "scanf"
+    scanf("%d", capacite);
 }
 
 void saisirStatut(char *statut) {

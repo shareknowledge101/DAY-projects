@@ -13,6 +13,7 @@ void modifier() {
 
     int trouve_indic = rechercheByID(id);
     
+    
     if (trouve_indic != -1) {
         printf("Modification de l'avion ID [%03d]\n", id);
 

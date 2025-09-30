@@ -3,24 +3,22 @@
 #include "headers.h"
 #include "utilisable_inputs.h"
 
-// Search by ID - returns index if found, -1 if not found
 int rechercheByID(int id) {
     for (int i = 0; i < AvionCalc; i++) {
         if (flotte[i].id == id) {
-            return i; // Return index instead of just 1
+            return i;
         }
     }
-    return -1; // Not found
+    return -1;
 }
 
-// Search by Model - returns index if found, -1 if not found
 int rechercheByModel(char model[]) {
     for (int i = 0; i < AvionCalc; i++) {
         if (strcmp(flotte[i].modele, model) == 0) {
-            return i; // Return index instead of just 1
+            return i;
         }
     }
-    return -1; // Not found
+    return -1;
 }
 
 void rechercher() {
